@@ -5,6 +5,7 @@ total_amount = 0
 average_chanes = 0
 profit_loses = []
 months = []
+increase_decrease = []
 
 path = os.path.join("..", "Resources", "02-Homework_03-Python_Instructions_PyBank_Resources_budget_data.csv")
 
@@ -27,3 +28,22 @@ average_chanes = round((profit_loses[-1]  - profit_loses[0] ) / (total_months - 
 
 print(f"Total: ${total_amount}")
 print(f"Average Change: ${average_chanes}")
+
+#print(dictionary)
+#Greatest increse in profits = actual value - past value
+
+it = 1
+for value in profit_loses:
+        if it == len(profit_loses):
+            break
+        else:
+            increase = profit_loses[it] - value
+            it = it + 1
+            #print(increase)
+            increase_decrease.append(increase)
+
+#print(increase_decrease)
+del months[0]
+#print(months)
+dictionary = dict(zip(months, increase_decrease))
+print(dictionary)
