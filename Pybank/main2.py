@@ -17,6 +17,9 @@ with open(path) as csvfile:
         profit_loses.append(int(row[1]))
         months.append(row[0])
 
+print("Financial Analysis")
+print("-----------------------------")
+
 total_months = len(months)
 print(f"Total Months: {total_months}")
 
@@ -29,7 +32,6 @@ average_chanes = round((profit_loses[-1]  - profit_loses[0] ) / (total_months - 
 print(f"Total: ${total_amount}")
 print(f"Average Change: ${average_chanes}")
 
-#print(dictionary)
 #Greatest increse in profits = actual value - past value
 
 it = 1
@@ -45,5 +47,15 @@ for value in profit_loses:
 #print(increase_decrease)
 del months[0]
 #print(months)
-dictionary = dict(zip(months, increase_decrease))
-print(dictionary)
+percentage_change = dict(zip(months, increase_decrease))
+
+def values(item):
+    return item[1]
+sorted_per_change = []
+for pair in sorted(percentage_change.items(), key=values, reverse=True):
+    sorted_per_change.append(pair)
+
+#print(sorted_per_change)
+print(f"Greatest Increase in Profits: {sorted_per_change[0][0]} (${sorted_per_change[0][1]})")
+print(f"Greatest Decrease in Profits: {sorted_per_change[-1][0]} (${sorted_per_change[-1][1]})")
+
