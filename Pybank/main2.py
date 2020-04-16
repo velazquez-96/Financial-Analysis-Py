@@ -25,13 +25,11 @@ with open(path) as csvfile:
         profit_loses.append(int(row[1]))
         months.append(row[0])
     total_months = len(months)
-print(f"Total Months: {total_months}")
+#print(f"Total Months: {total_months}")
 for value in profit_loses:
         total_amount = total_amount + value
 average_changes = round((profit_loses[-1]  - profit_loses[0] ) / (total_months - 1), 2)
 
-print(f"Total: ${total_amount}")
-print(f"Average Change: ${average_changes}")
 
 # Make a new list with the diference between actual value and past value
 # Start the for loop in the second row since the first value would have been: value - 0 
@@ -62,6 +60,9 @@ sorted_per_change = []
 for pair in sorted(percentage_change.items(), key=values, reverse=True):
     sorted_per_change.append(pair)
 
+print(f"Total Months: {total_months}")
+print(f"Total: ${total_amount}")
+print(f"Average Change: ${average_changes}")
 print(f"Greatest Increase in Profits: {sorted_per_change[0][0]} (${sorted_per_change[0][1]})")
 print(f"Greatest Decrease in Profits: {sorted_per_change[-1][0]} (${sorted_per_change[-1][1]})")
 
