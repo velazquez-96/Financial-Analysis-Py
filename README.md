@@ -27,6 +27,10 @@ The second project uses python to help a small, rural town modernize its vote co
 
 ## Outcomes
 
+Financial analysis
 
+![Image1.png](Images/Image1.png)
 
+Election results
 
+![Image2.png](Images/Image2.png)
