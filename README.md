@@ -21,4 +21,12 @@ The second project uses python to help a small, rural town modernize its vote co
 * The dataset used for the first project is composed of two columns: Date and Profit/Losses.
 * The dataset used for the second project is composed of three columns: Voter ID, County, and Candidate.
 
+## Built with 
+
+* Python
+
+## Outcomes
+
+
+
 
